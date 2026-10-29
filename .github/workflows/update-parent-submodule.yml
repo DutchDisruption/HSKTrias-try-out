@@ -1,0 +1,50 @@
+
+name: Update parent submodule reference
+
+on:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: read
+
+jobs:
+  update-parent:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout parent repository
+        uses: actions/checkout@v4
+        with:
+          repository: DutchDisruption/HSKTrias
+          ref: main
+          token: ${{ secrets.PARENT_REPO_TOKEN }}
+          submodules: false
+
+      - name: Configure access to private submodule
+        env:
+          TOKEN: ${{ secrets.PARENT_REPO_TOKEN }}
+        run: |
+          git config --global \
+            url."https://x-access-token:${TOKEN}@github.com/".insteadOf \
+            "https://github.com/"
+
+      - name: Update try-out submodule reference
+        run: |
+          git submodule update --init content/try-out
+          git -C content/try-out fetch origin main
+          git -C content/try-out checkout --detach origin/main
+
+          git add content/try-out
+
+          if git diff --cached --quiet; then
+            echo "Try-out reference is already up to date."
+            exit 0
+          fi
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git commit -m "Update try-out content reference"
+          git push origin HEAD:main
