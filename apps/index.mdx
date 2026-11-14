@@ -33,5 +33,51 @@ ogDescription: ''
 
 ![](/images/try-out/9450.jpg)
 
-
 ![](/images/try-out/9454.jpg)
+
+Football
+The whole screen is one solid colour at a time.
+The user picks 2 or more club colours (e.g. Red, White).
+The screen switches between them, either as a hard cut or a quick fade.
+Speed sets how often it switches. At minimum it changes every few seconds, at maximum several times per second.
+Strobe makes it blink to black between colours.
+Flash turns on the phone torch.
+Disco
+The screen is split into a grid of blocks (4 columns × 8 rows).
+The user picks up to 3 colours, or taps Random Colors.
+Each block shows one of those colours and changes at the set speed.
+Patterns:
+Moving: the colours shift across the grid step by step, like a checkerboard sliding.
+Random: each block picks its own colour on every step.
+Each change is a short fade, not a hard cut.
+Strobe and Flash work the same as in Football.
+Party (pixel images)
+The screen is a grid of small square lights. Unlit ones are dark grey.
+Each effect (Xmas Tree, Fireworks, Candle, Equalizer, Heart) is a short looping animation of about 5 frames.
+Speed sets how fast the frames play, e.g. 1 to 10 frames per second.
+The Party panel has no colour pickers, because each effect has its own fixed colours.
+How to describe an image
+
+Describe each image as three things: a grid size, a colour key, and one text grid per frame, where each character is one pixel and . means off.
+
+Example: a small heart that beats, 2 frames, 7×6 grid, key R = red, P = pink:
+
+Frame 1:        Frame 2:
+.RR.RR.         .......
+RRRRRRR         .PP.PP.
+RRRRRRR         .PPPPP.
+.RRRRR.         ..PPP..
+..RRR..         ...P...
+...R...         .......
+
+When you give this to a developer or an AI, add:
+
+the grid size (e.g. 28×36 for the full tree)
+the colour key (letter → colour)
+the number of frames and their order
+what changes between frames (e.g. “ornaments twinkle, star alternates yellow and white”)
+the loop speed
+
+For effects with moving parts like snow or fireworks, describe the motion instead (“flakes fall one row per frame and wrap to the top”) and let the code draw it. That is easier than drawing every frame by hand.
+
+If you want, I can write the exact frame text for the Candle, Heart, Fireworks and Equalizer
