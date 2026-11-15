@@ -29,6 +29,32 @@ ogDescription: ''
 • Hoofdtitel (App Name): CLRZ: Club, Party, Disco Light (precies 30 tekens!)
 • Ondertitel (Subtitle): Stadium Fan Colors & Strobe (27 tekens)
 
+
+\## \*\*CLRZ – AI-Powered LED Matrix Renderer\*\*
+
+\*\*Functional description\*\*
+
+A reusable .NET MAUI control built with SkiaSharp that converts AI-generated PNG images into a programmable LED matrix.
+
+\*\*How it works:\*\*
+
+1. \*\*Image input:\*\* Load PNG images at 80 × 160 resolution with up to 256 colors.
+2. \*\*Pixel conversion:\*\* Convert the PNG into a 2D C# color array containing 12,800 individual LED pixels.
+3. \*\*LED rendering:\*\* SkiaSharp renders each pixel as an individual LED with configurable dark borders, spacing, rounded corners and glow.
+4. \*\*Animation:\*\* Support multiple PNG frames and dynamically generated pixel animations.
+5. \*\*Visual settings:\*\* Control LED size, brightness, colors, glow intensity and display style.
+6. \*\*Performance:\*\* Update and render the matrix efficiently, targeting 60 FPS.
+
+\*\*Core components:\*\*
+
+- \`LedMatrix\` – stores pixel colors.
+- \`LedMatrixView\` – MAUI display control.
+- \`LedRenderer\` – renders individual LEDs using SkiaSharp.
+- \`LedAnimationEngine\` – manages frames, timing and pixel animations.
+- \`PngToMatrixConverter\` – converts AI-generated artwork into LED data.
+
+\*\*Goal:\*\* One reusable LED rendering engine that can display unlimited AI-generated images and animations without requiring custom rendering code for each effect.
+
 ![](/images/try-out/9451.jpg)
 
 ![](/images/try-out/9450.jpg)
