@@ -42,6 +42,13 @@ A reusable .NET MAUI control built with SkiaSharp that converts AI-generated PNG
 
 The pre-converted files in your MAUI Resources/Raw folder become the starting point for SkiaSharp.
 
+\- ImageMagick — free and open-source.
+- Python — free and open-source.
+- Pillow — free and open-source.
+No subscriptions or licence fees are required for this workflow, including commercial use, subject to their respective licences.
+
+For CLRZ, I'd use Python + Pillow for the PNG-to-.led conversion. It's simple, free and easy to automate for hundreds of images.
+
 The best approach is to create a small PNG-to-LED converter tool that runs on your development computer. You use it whenever you create new artwork. It converts PNG images into .led files before they go into your MAUI app.
 
 Your app then only loads the finished .led files. No PNG conversion is needed when the app runs.
