@@ -29,7 +29,6 @@ ogDescription: ''
 • Hoofdtitel (App Name): CLRZ: Club, Party, Disco Light (precies 30 tekens!)
 • Ondertitel (Subtitle): Stadium Fan Colors & Strobe (27 tekens)
 
-
 \## \*\*CLRZ – AI-Powered LED Matrix Renderer\*\*
 
 \*\*Functional description\*\*
@@ -40,10 +39,17 @@ A reusable .NET MAUI control built with SkiaSharp that converts AI-generated PNG
 
 1. \*\*Image input:\*\* Load PNG images at 80 × 160 resolution with up to 256 colors.
 2. \*\*Pixel conversion:\*\* Convert the PNG into a 2D C# color array containing 12,800 individual LED pixels.
-3. \*\*LED rendering:\*\* SkiaSharp renders each pixel as an individual LED with configurable dark borders, spacing, rounded corners and glow.
-4. \*\*Animation:\*\* Support multiple PNG frames and dynamically generated pixel animations.
-5. \*\*Visual settings:\*\* Control LED size, brightness, colors, glow intensity and display style.
-6. \*\*Performance:\*\* Update and render the matrix efficiently, targeting 60 FPS.
+
+The pre-converted files in your MAUI Resources/Raw folder become the starting point for SkiaSharp.
+
+The best approach is to create a small PNG-to-LED converter tool that runs on your development computer. You use it whenever you create new artwork. It converts PNG images into .led files before they go into your MAUI app.
+
+Your app then only loads the finished .led files. No PNG conversion is needed when the app runs.
+
+1. \*\*LED rendering:\*\* SkiaSharp renders each pixel as an individual LED with configurable dark borders, spacing, rounded corners and glow.
+2. \*\*Animation:\*\* Support multiple PNG frames and dynamically generated pixel animations.
+3. \*\*Visual settings:\*\* Control LED size, brightness, colors, glow intensity and display style.
+4. \*\*Performance:\*\* Update and render the matrix efficiently, targeting 60 FPS.
 
 \*\*Core components:\*\*
 
