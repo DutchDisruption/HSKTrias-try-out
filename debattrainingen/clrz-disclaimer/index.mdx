@@ -1,0 +1,48 @@
+---
+type: page
+title: CLRZ disclaimer
+menutitle: CLRZ disclaimer
+menu: true
+menuPlace: null
+hamburgerMenu: true
+noHero: false
+noHeroLight: false
+herotitle: ''
+herodescription: ''
+herobuttons: []
+cardtext: ''
+image: ''
+noWideBlock: false
+widetitle: ''
+widedescription: ''
+noBlocks: false
+category: ''
+author: ''
+date: ''
+description: ''
+keywords: ''
+ogImage: ''
+ogTitle: ''
+ogDescription: ''
+---
+
+How to do it
+
+Show a dialog the first time the app opens, before any flashing starts. It shouldn't be possible to dismiss it by tapping outside or pressing back.
+Use an explicit "I understand" button, with no timer.
+Save a flag (for example warning_accepted = true) so it doesn't show again.
+Show it again if the app is reinstalled or data is cleared. That happens automatically since the flag is gone.
+
+Two small additions that make "once" safe enough
+
+Re-show it after updates that add new flashing modes. Use a version number on the flag (e.g. warning_version = 2) so you can force it to show again when needed.
+Keep a reread place, such as the "i" icon in the CLRZ bar, since people forget what they tapped through.
+
+Short text you can use
+
+⚠ Photosensitivity warning
+This app produces flashing lights and rapid color changes, which may trigger seizures in people with photosensitive epilepsy. If you or anyone in your family has a history of seizures, consult a doctor before using it.
+Stop immediately if you feel dizzy, disoriented, or unwell.
+The flashlight can flicker rapidly. Don't point it at anyone's eyes, and don't use it while driving.
+
+[ I understand ]
